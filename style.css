@@ -232,10 +232,15 @@ header .container {
     height: auto;
     display: block;
     transition: var(--transition);
+    filter: brightness(1); /* garante que não fique escura */
+    opacity: 1; /* garante visibilidade total */
 }
 
-.hero-image:hover img {
-    transform: scale(1.03);
+/* efeito hover só no desktop */
+@media (min-width: 993px) {
+    .hero-image:hover img {
+        transform: scale(1.03);
+    }
 }
 
 @media (max-width: 992px) {
@@ -252,6 +257,11 @@ header .container {
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+    }
+
+    .hero-image img {
+        filter: brightness(1.1) contrast(1.05); /* corrige aspecto "apagado" */
+        opacity: 1 !important;
     }
 }
 
@@ -279,6 +289,7 @@ header .container {
         font-size: 1rem;
     }
 }
+
 /* About Section - Estilo Premium */
 .about .container {
     display: flex;
@@ -1686,4 +1697,37 @@ footer .container {
     .img-3 {
         right: 5%;
     }
+}
+@media (max-width: 768px) {
+  .hero-image,
+  .hero-image img {
+    all: unset !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    background: none !important;
+    position: static !important;
+    z-index: 1 !important;
+  }
+
+  .hero-image::before,
+  .hero-image::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  .hero {
+    background: none !important;
+  }
+
+  body,
+  html {
+    background: none !important;
+  }
 }
