@@ -1321,3 +1321,344 @@ footer .container {
         padding: 0 20px 20px;
     }
 }
+/* Seção de Orçamento - Estilo Premium */
+.budget-section {
+    padding: 80px 0;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.budget-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 50%, rgba(40,40,40,0.8) 0%, rgba(0,0,0,1) 70%);
+    z-index: 1;
+}
+
+.budget-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.budget-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.budget-text {
+    flex: 1;
+}
+
+.budget-title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.budget-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.budget-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #2ecc71; /* Verde vibrante */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    white-space: nowrap;
+}
+
+.budget-button:hover {
+    background: #27ae60; /* Verde mais escuro no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Efeito de brilho no botão */
+.budget-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.budget-button:hover::after {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .budget-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .budget-text {
+        margin-bottom: 30px;
+    }
+    
+    .budget-title {
+        font-size: 2.2rem;
+    }
+    
+    .budget-subtitle {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .budget-title {
+        font-size: 1.8rem;
+    }
+    
+    .budget-subtitle {
+        font-size: 1rem;
+    }
+    
+    .budget-button {
+        padding: 15px 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Seção Nosso Compromisso - Estilo Premium */
+.commitment-section {
+    padding: 100px 0;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.commitment-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(30,30,30,0.8) 0%, rgba(0,0,0,1) 70%);
+    z-index: 0;
+}
+
+.commitment-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.commitment-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.commitment-text {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #2ecc71;
+    margin: 20px 0;
+}
+
+.commitment-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 25px;
+}
+
+.commitment-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #2ecc71;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    margin-top: 20px;
+}
+
+.commitment-button:hover {
+    background: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Efeito dos círculos sobrepostos */
+.image-stack {
+    flex: 1;
+    position: relative;
+    height: 400px;
+    min-width: 400px;
+}
+
+.circle-img {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #2ecc71;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+}
+
+.circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.circle-img:hover img {
+    transform: scale(1.1);
+}
+
+.img-1 {
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.img-2 {
+    top: 60px;
+    left: 100px;
+    z-index: 2;
+    transform: scale(0.9);
+}
+
+.img-3 {
+    top: 120px;
+    left: 200px;
+    z-index: 1;
+    transform: scale(0.8);
+}
+
+/* Efeito ao passar o mouse */
+.img-1:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.img-2:hover {
+    transform: scale(0.95) translateY(-10px);
+}
+
+.img-3:hover {
+    transform: scale(0.85) translateY(-10px);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .commitment-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section-title::after {
+        margin: 20px auto;
+    }
+    
+    .image-stack {
+        margin-top: 50px;
+        height: 300px;
+        min-width: 300px;
+    }
+    
+    .circle-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .img-2 {
+        top: 40px;
+        left: 70px;
+    }
+    
+    .img-3 {
+        top: 80px;
+        left: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .commitment-description {
+        font-size: 1rem;
+    }
+    
+    .image-stack {
+        height: 250px;
+        min-width: 250px;
+    }
+    
+    .circle-img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .img-2 {
+        top: 30px;
+        left: 50px;
+    }
+    
+    .img-3 {
+        top: 60px;
+        left: 100px;
+    }
+}
