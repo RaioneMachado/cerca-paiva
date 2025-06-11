@@ -210,3 +210,38 @@ document.addEventListener('DOMContentLoaded', function() {
         faqItems[0].classList.add('active');
     }
 });
+// Adicione este código ao seu arquivo JS existente
+document.addEventListener('DOMContentLoaded', function() {
+    // Animação dos cards de informação
+    const infoCards = document.querySelectorAll('.info-card');
+    
+    const animateCards = () => {
+        infoCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 200 * index);
+        });
+    };
+    
+    // Observador de interseção para animação quando a seção é visualizada
+    const locationSection = document.querySelector('.location');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCards();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(locationSection);
+    
+    // Inicializa os cards com estilo inicial para animação
+    infoCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+});
