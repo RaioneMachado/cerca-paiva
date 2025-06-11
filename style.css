@@ -1451,9 +1451,9 @@ footer .container {
     }
 }
 
-/* Seção Nosso Compromisso - Estilo Premium */
+/* Seção Nosso Compromisso - Design em Triângulo */
 .commitment-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: #000;
     color: #fff;
     position: relative;
@@ -1467,11 +1467,11 @@ footer .container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(30,30,30,0.8) 0%, rgba(0,0,0,1) 70%);
+    background: radial-gradient(circle at 70% 50%, rgba(30,30,30,0.8) 0%, rgba(0,0,0,1) 70%);
     z-index: 0;
 }
 
-.commitment-section .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -1481,21 +1481,44 @@ footer .container {
 
 .commitment-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 60px;
 }
 
+@media (min-width: 992px) {
+    .commitment-content {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
 .commitment-text {
     flex: 1;
+    order: 1;
+}
+
+@media (min-width: 992px) {
+    .commitment-text {
+        order: 0;
+    }
 }
 
 .section-title {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     position: relative;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        text-align: left;
+        font-size: 3rem;
+    }
 }
 
 .section-title::after {
@@ -1507,19 +1530,32 @@ footer .container {
     margin: 20px 0;
 }
 
+@media (min-width: 768px) {
+    .section-title::after {
+        margin: 20px 0;
+    }
+}
+
 .commitment-description {
     font-size: 1.1rem;
     line-height: 1.8;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .commitment-description {
+        text-align: left;
+    }
 }
 
 .commitment-button {
     display: inline-block;
-    padding: 18px 45px;
+    padding: 16px 40px;
     background: #2ecc71;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1527,7 +1563,15 @@ footer .container {
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
-    margin-top: 20px;
+    margin: 30px auto 0;
+    text-align: center;
+    width: fit-content;
+}
+
+@media (min-width: 768px) {
+    .commitment-button {
+        margin: 30px 0 0;
+    }
 }
 
 .commitment-button:hover {
@@ -1536,23 +1580,47 @@ footer .container {
     box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
 }
 
-/* Efeito dos círculos sobrepostos */
-.image-stack {
-    flex: 1;
+/* Layout Triangular dos Círculos */
+.triangle-image-stack {
     position: relative;
-    height: 400px;
-    min-width: 400px;
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    order: 0;
+}
+
+@media (min-width: 992px) {
+    .triangle-image-stack {
+        order: 1;
+        flex: 1;
+        height: 400px;
+    }
 }
 
 .circle-img {
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #2ecc71;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .circle-img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (min-width: 992px) {
+    .circle-img {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 .circle-img img {
@@ -1567,84 +1635,43 @@ footer .container {
     transform: scale(1.1);
 }
 
+/* Posicionamento em Triângulo */
 .img-1 {
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
 }
 
 .img-2 {
-    top: 60px;
-    left: 100px;
+    bottom: 20px;
+    left: 10%;
     z-index: 2;
-    transform: scale(0.9);
 }
 
 .img-3 {
-    top: 120px;
-    left: 200px;
+    bottom: 20px;
+    right: 10%;
     z-index: 1;
-    transform: scale(0.8);
 }
 
-/* Efeito ao passar o mouse */
+/* Efeitos de Hover */
 .img-1:hover {
-    transform: scale(1.05) translateY(-10px);
+    transform: translateX(-50%) scale(1.05);
 }
 
 .img-2:hover {
-    transform: scale(0.95) translateY(-10px);
+    transform: scale(1.05);
 }
 
 .img-3:hover {
-    transform: scale(0.85) translateY(-10px);
+    transform: scale(1.05);
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
-    .commitment-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .section-title::after {
-        margin: 20px auto;
-    }
-    
-    .image-stack {
-        margin-top: 50px;
-        height: 300px;
-        min-width: 300px;
-    }
-    
-    .circle-img {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .img-2 {
-        top: 40px;
-        left: 70px;
-    }
-    
-    .img-3 {
-        top: 80px;
-        left: 140px;
-    }
-}
-
+/* Ajustes para telas pequenas */
 @media (max-width: 576px) {
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    .commitment-description {
-        font-size: 1rem;
-    }
-    
-    .image-stack {
-        height: 250px;
-        min-width: 250px;
+    .triangle-image-stack {
+        height: 300px;
     }
     
     .circle-img {
@@ -1653,12 +1680,10 @@ footer .container {
     }
     
     .img-2 {
-        top: 30px;
-        left: 50px;
+        left: 5%;
     }
     
     .img-3 {
-        top: 60px;
-        left: 100px;
+        right: 5%;
     }
 }
