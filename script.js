@@ -245,3 +245,4 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
 });
+
