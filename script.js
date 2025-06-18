@@ -246,3 +246,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Timer de contagem regressiva
+function startCountdown() {
+    const countdown = () => {
+        const now = new Date();
+        const endOfDay = new Date();
+        endOfDay.setHours(23, 59, 59, 999);
+        
+        const diff = endOfDay - now;
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    };
+    
+    countdown();
+    setInterval(countdown, 1000);
+}
+
+// Inicia o timer quando a página carregar
+window.addEventListener('DOMContentLoaded', startCountdown);
